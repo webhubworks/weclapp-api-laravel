@@ -5,11 +5,10 @@ namespace Webhub\WeclappApiLaravel;
 use Webhub\WeclappApiLaravel\Services\LaravelHttpClient;
 use Webhubworks\WeclappApiCore\Client;
 
-class WeclappApiLaravel {
-
+class WeclappApiLaravel
+{
     public static function create(): Client
     {
-        return Client::create(new LaravelHttpClient());
+        return Client::create(new LaravelHttpClient);
     }
-
 }

@@ -13,7 +13,7 @@ class LaravelHttpClient implements ClientInterface
     {
         $laravelResponse = Http::withHeaders([
             'AuthenticationToken' => config('weclapp.auth_token'),
-            ...$request->getHeaders()
+            ...$request->getHeaders(),
         ])
             ->withBody((string) $request->getBody())
             ->baseUrl(config('weclapp.api_base_url'))
