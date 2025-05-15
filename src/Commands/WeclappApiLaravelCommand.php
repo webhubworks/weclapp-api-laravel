@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Webhub\WeclappApiLaravel\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WeclappApiLaravelCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'weclapp-api-laravel';
 
     public $description = 'My command';
 
