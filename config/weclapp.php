@@ -5,6 +5,6 @@ return [
     'auth_token' => env('WECLAPP_AUTH_TOKEN'),
 
     'logging' => [
-        'enabled' => env('WECLAPP_ENABLE_LOGGING', true),
+        'enabled' => (bool) env('WECLAPP_ENABLE_LOGGING', true),
     ],
 ];
