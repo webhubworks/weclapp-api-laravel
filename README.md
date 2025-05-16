@@ -34,3 +34,7 @@ class WeclappTest extends Command
 }
 
 ```
+
+## Logging
+By default, logging the requests and responses is enabled. You may set the `WECLAPP_ENABLE_LOGGING` environment variable to `false` to disable logging.
+Logs will be written to a daily file in the `storage/logs` directory. The log file will be named `weclapp-api-YYYY-MM-DD.log`.
