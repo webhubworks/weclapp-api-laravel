@@ -33,15 +33,15 @@ class LaravelHttpClient implements ClientInterface
 
     private function logRequestAndResponse(RequestInterface $request, PromiseInterface|\Illuminate\Http\Client\Response $laravelResponse): void
     {
-        if(!config('weclapp.logging.enabled')) {
+        if (! config('weclapp.logging.enabled')) {
             return;
         }
 
         Log::channel('weclapp-api')->debug('Weclapp API Request', [
             'method' => $request->getMethod(),
-            'url' => (string)$request->getUri(),
+            'url' => (string) $request->getUri(),
             'headers' => $request->getHeaders(),
-            'body' => (string)$request->getBody(),
+            'body' => (string) $request->getBody(),
         ]);
 
         Log::channel('weclapp-api')->debug('Weclapp API Response', [

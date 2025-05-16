@@ -12,7 +12,7 @@ class WeclappApiLaravelServiceProvider extends PackageServiceProvider
     {
         parent::boot();
 
-        if (!config()->has('logging.channels.weclapp-api')) {
+        if (! config()->has('logging.channels.weclapp-api')) {
             // Merge your custom log channel configuration
             config()->set('logging.channels.weclapp-api', [
                 'driver' => 'daily',
