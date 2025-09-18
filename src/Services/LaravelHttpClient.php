@@ -24,10 +24,20 @@ class LaravelHttpClient implements ClientInterface
 
         $this->logRequestAndResponse($request, $laravelResponse);
 
+        // Extract validation errors if they exist in the decoded response
+        $body = $laravelResponse->body();
+        if ($laravelResponse->failed() && $laravelResponse->json()) {
+            $decoded = $laravelResponse->json();
+            if (isset($decoded['validationErrors']) || isset($decoded['errors'])) {
+                // Include validation errors in the response body
+                $body = json_encode($decoded);
+            }
+        }
+
         return new Response(
             $laravelResponse->status(),
             $laravelResponse->headers(),
-            $laravelResponse->body()
+            $body
         );
     }
 
