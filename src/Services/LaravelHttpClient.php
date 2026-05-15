@@ -18,7 +18,10 @@ class LaravelHttpClient implements ClientInterface
             'AuthenticationToken' => config('weclapp.auth_token'),
             ...$request->getHeaders(),
         ])
-            ->withBody((string) $request->getBody())
+            ->withBody(
+                (string) $request->getBody(),
+                $request->getHeaderLine('Content-Type') ?: 'application/json',
+            )
             ->baseUrl(config('weclapp.api_base_url'))
             ->send($request->getMethod(), (string) $request->getUri());
 
