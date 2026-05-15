@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 use Webhub\WeclappApiLaravel\WeclappApiLaravel;
 
 /**
- * @see \Webhub\WeclappApiLaravel\WeclappApiLaravel
+ * @see WeclappApiLaravel
  */
 class Weclapp extends Facade
 {
